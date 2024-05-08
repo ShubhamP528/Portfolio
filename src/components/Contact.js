@@ -45,7 +45,7 @@ const Contact = () => {
         </div>
         <div className="flex flex-col items-center gap-6 md:gap-12">
           <div className="flex flex-col items-center md:gap-4">
-            <div className="flex items-center gap-4 md:gap-5">
+            <div className="flex items-center gap-4 md:gap-5 pl-3">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="24"
