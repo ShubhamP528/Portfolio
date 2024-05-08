@@ -5,7 +5,7 @@ const Projects = () => {
         <div className="flex flex-col items-center gap-4">
           <div className="self-center">
             <div className="flex items-center justify-center rounded-xl bg-gray-200 px-5 py-1">
-              <p className="text-normal text-sm font-medium">Work</p>
+              <p className="text-normal text-sm font-medium">Projects</p>
             </div>
           </div>
           <p className="text-normal text-lg md:text-xl max-w-xl text-center">
@@ -37,9 +37,11 @@ const Projects = () => {
               SyncMovie Watching Application
             </p>
             <p className="text-normal text-base">
-              "A platform for comparing and finding affordable flights, as well
-              as booking and purchasing tickets safely and easily in a few
-              simple clicks."
+              Experience the joy of synchronized movie magic with our innovative
+              app! Connect with friends, near or far, and watch your favorite
+              films together in perfect harmony. Whether it's laughter, tears,
+              or edge-of-your-seat suspense, share every cinematic moment in
+              real-time with our sync movie watching app.
             </p>
             <div className="flex flex-wrap gap-2">
               <div className="flex items-center justify-center rounded-xl bg-gray-200 px-5 py-1">
@@ -97,7 +99,7 @@ const Projects = () => {
               href="https://shoping-deal.vercel.app/"
             >
               <img
-                alt="Wingie preview"
+                alt="Shopping App"
                 loading="lazy"
                 width="1711"
                 height="1141"
@@ -114,9 +116,11 @@ const Projects = () => {
               Shoping App
             </p>
             <p className="text-normal text-base">
-              "A platform for comparing and finding affordable flights, as well
-              as booking and purchasing tickets safely and easily in a few
-              simple clicks."
+              Discover convenience at your fingertips with our shopping app!
+              Browse, buy, and delight in a seamless shopping experience. From
+              must-have essentials to trending favorites, explore a world of
+              endless possibilities, all in one place. Elevate your shopping
+              journey today!
             </p>
             <div className="flex flex-wrap gap-2">
               <div className="flex items-center justify-center rounded-xl bg-gray-200 px-5 py-1">
@@ -171,7 +175,7 @@ const Projects = () => {
               href="https://chating-application.onrender.com/"
             >
               <img
-                alt="Wingie preview"
+                alt="Chating application"
                 loading="lazy"
                 width="1711"
                 height="1141"
@@ -188,9 +192,10 @@ const Projects = () => {
               Chating App
             </p>
             <p className="text-normal text-base">
-              "A platform for comparing and finding affordable flights, as well
-              as booking and purchasing tickets safely and easily in a few
-              simple clicks."
+              Connecting people, one chat at a time. Welcome to our vibrant
+              community where conversations spark, friendships flourish, and
+              memories are made. Join us and let your words create waves of
+              connection across the digital landscape.
             </p>
             <div className="flex flex-wrap gap-2">
               <div className="flex items-center justify-center rounded-xl bg-gray-200 px-5 py-1">
