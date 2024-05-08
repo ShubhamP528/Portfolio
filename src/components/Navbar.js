@@ -3,6 +3,26 @@ const Navbar = ({ NavStatus, Theam }) => {
     NavStatus.setSideNav(!NavStatus.sideNav);
   };
 
+  const handleDownload = () => {
+    // Replace 'url' with the actual URL of the file you want to download
+    const url =
+      "https://res-console.cloudinary.com/dgsjppp4a/media_explorer_thumbnails/f8bdf2ec8e579a23c1863cad44b06625/detailed";
+    fetch(url)
+      .then((response) => response.blob())
+      .then((blob) => {
+        // Create a temporary link element
+        const link = document.createElement("a");
+        link.href = window.URL.createObjectURL(new Blob([blob]));
+        link.setAttribute("download", "Shubham Prajapati.pdf"); // Set the download attribute with desired filename
+        // Append the link to the body
+        document.body.appendChild(link);
+        // Trigger the download
+        link.click();
+        // Clean up
+        link.parentNode.removeChild(link);
+      });
+  };
+
   const switchButton = () => {
     if (Theam.isDark) {
       document.getElementsByTagName("html")[0].classList.remove("dark");
@@ -117,7 +137,10 @@ const Navbar = ({ NavStatus, Theam }) => {
                 </svg>
               )}
             </button>
-            <button className="inline-flex items-center justify-center rounded-xl bg-gray-900 px-4 py-1.5 font-medium text-gray-50 transition-colors duration-200 hover:bg-gray-700 active:bg-gray-800">
+            <button
+              className="inline-flex items-center justify-center rounded-xl bg-gray-900 px-4 py-1.5 font-medium text-gray-50 transition-colors duration-200 hover:bg-gray-700 active:bg-gray-800"
+              onClick={handleDownload}
+            >
               Download CV
             </button>
           </div>

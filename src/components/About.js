@@ -78,7 +78,7 @@ const About = () => {
                 GitHub
               </a>
             </p>
-            <p class="text-normal text-base">
+            <p className="text-normal text-base">
               One last thing, I'm available for freelance work, so feel free to
               reach out and say hello! I promise I don't bite 😉
             </p>

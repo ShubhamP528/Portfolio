@@ -60,7 +60,7 @@ const Skills = () => {
                 height="64"
                 decoding="async"
                 data-nimg="1"
-                class="transition-transform duration-300 md:hover:scale-110"
+                className="transition-transform duration-300 md:hover:scale-110"
                 src="https://sagarshah.dev/_next/static/media/icon-nodejs.e9fdb7cb.svg"
                 style={{ color: "transparent" }}
               />
@@ -77,7 +77,7 @@ const Skills = () => {
                 height="64"
                 decoding="async"
                 data-nimg="1"
-                class="transition-transform duration-300 md:hover:scale-110"
+                className="transition-transform duration-300 md:hover:scale-110"
                 src="https://sagarshah.dev/_next/static/media/icon-express.14fe67e7.svg"
                 style={{ color: "transparent" }}
               />
@@ -94,7 +94,7 @@ const Skills = () => {
                 height="64"
                 decoding="async"
                 data-nimg="1"
-                class="transition-transform duration-300 md:hover:scale-110"
+                className="transition-transform duration-300 md:hover:scale-110"
                 src="https://sagarshah.dev/_next/static/media/icon-socket.b8aba332.svg"
                 style={{ color: "transparent" }}
               />
@@ -115,7 +115,7 @@ const Skills = () => {
                 height="64"
                 decoding="async"
                 data-nimg="1"
-                class="transition-transform duration-300 md:hover:scale-110"
+                className="transition-transform duration-300 md:hover:scale-110"
                 src="https://sagarshah.dev/_next/static/media/icon-postgresql.37b474b1.svg"
                 style={{ color: "transparent" }}
               />
