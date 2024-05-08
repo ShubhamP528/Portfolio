@@ -69,7 +69,7 @@ const About = () => {
                 Twitter
               </a>
               &nbsp;where I share tech-related bites and build in public, or you
-              can follow me on
+              can follow me on&nbsp;
               <a
                 target="blank"
                 className="underline underline-offset-4 transition-all hover:text-gray-900 active:text-gray-600"
