@@ -5,14 +5,13 @@ const Navbar = ({ NavStatus, Theam }) => {
 
   const handleDownload = () => {
     // Replace 'url' with the actual URL of the file you want to download
-    const url =
-      "https://res-console.cloudinary.com/dgsjppp4a/media_explorer_thumbnails/f8bdf2ec8e579a23c1863cad44b06625/detailed";
+    const url = "/ShubhamPrajapati.pdf";
     fetch(url)
       .then((response) => response.blob())
       .then((blob) => {
         // Create a temporary link element
         const link = document.createElement("a");
-        link.href = window.URL.createObjectURL(new Blob([blob]));
+        link.href = window.URL.createObjectURL(new Blob([blob])); // this will get the relative path of the file
         link.setAttribute("download", "Shubham Prajapati.pdf"); // Set the download attribute with desired filename
         // Append the link to the body
         document.body.appendChild(link);
