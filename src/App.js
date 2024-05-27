@@ -9,17 +9,16 @@ import Navbar from "./components/Navbar";
 import Projects from "./components/Projects";
 import SideNavBar from "./components/SideNavBar";
 import Skills from "./components/Skills";
-import Test from "./components/Test";
 
 function App() {
   const [sideNav, setSideNav] = useState(false);
   const [isDark, setIsDark] = useState(false);
   // console.log(sideNav);
-  const [viewportWidth, setViewportWidth] = useState(window.innerWidth);
+  // const [viewportWidth, setViewportWidth] = useState(window.innerWidth);
 
   useEffect(() => {
     const handleResize = () => {
-      setViewportWidth(window.innerWidth);
+      // setViewportWidth(window.innerWidth);
       // Perform actions based on the viewport width change
       // For example:
       if (window.innerWidth > 768) {

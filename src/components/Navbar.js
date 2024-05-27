@@ -43,7 +43,7 @@ const Navbar = ({ NavStatus, Theam }) => {
   return (
     <header className="sticky top-0 z-30 w-full border-b border-transparent max-md:border-gray-100 bg-gray/50 backdrop-blur-xl md:border-gray-100">
       <div className="mx-auto flex w-full max-w-7xl items-center justify-between p-4 md:px-8">
-        <a href="#">
+        <a href="#hero">
           <h3 className="text-2xl md:text-3xl tracking-[-0.02em] text-gray-900 font-bold">
             {"<SP />"}
           </h3>
