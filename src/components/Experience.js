@@ -22,6 +22,43 @@ const Experience = () => {
               decoding="async"
               data-nimg="1"
               className="max-w-[120px]"
+              src="https://media.licdn.com/dms/image/D4D0BAQFWL-HNkd25Iw/company-logo_200_200/0/1719257435507/claw_lawyers_logo?e=1727913600&v=beta&t=M2zEKzRgcOZ5cqO3GHWBVdyzuncoNvgw0S2X6Fc3Xpg"
+              style={{ color: "transparent" }}
+            ></img>
+          </div>
+          <div className="flex flex-col gap-4 max-md:order-3 md:w-2/4">
+            <p className="text-lg md:text-xl font-semibold text-gray-900">
+              Fullstack developer
+            </p>
+            <ul className="flex list-disc flex-col gap-2 md:gap-1">
+              <li className="text-normal text-base">
+                Working as Fullstack intern.
+              </li>
+              <li className="text-normal text-base">
+                Handle the while backend server.
+              </li>
+              <li className="text-normal text-base">Adding new features.</li>
+              <li className="text-normal text-base">
+                Create UI with the help of figma design
+              </li>
+            </ul>
+          </div>
+          <div className="max-md:order-2 md:w-1/4">
+            <p className="text-base text-gray-700 md:text-right">
+              May 2024 - Present
+            </p>
+          </div>
+        </div>
+        <div className="rounded-xl bg-gray shadow-md dark:bg-gray-100 dark:shadow-2xl mx-auto flex w-full max-w-4xl flex-col justify-between gap-4 p-8 md:flex-row md:gap-8">
+          <div className="max-md:order-1 md:w-1/4">
+            <img
+              alt="Upwork logo"
+              loading="lazy"
+              width="102"
+              height="28"
+              decoding="async"
+              data-nimg="1"
+              className="max-w-[120px]"
               src="https://rablo.in/wp-content/uploads/elementor/thumbs/Untitled_design__2_-removebg-preview-e1672118546472-q10x0nqhb6e977wbz7q2tgapsuip6f88d5713gnr5o.png"
               style={{ color: "transparent" }}
             ></img>
@@ -47,7 +84,7 @@ const Experience = () => {
           </div>
           <div className="max-md:order-2 md:w-1/4">
             <p className="text-base text-gray-700 md:text-right">
-              Feb 2024 - Present
+              Feb 2024 - April 2024
             </p>
           </div>
         </div>
