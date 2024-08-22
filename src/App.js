@@ -9,6 +9,7 @@ import Navbar from "./components/Navbar";
 import Projects from "./components/Projects";
 import SideNavBar from "./components/SideNavBar";
 import Skills from "./components/Skills";
+import { Helmet } from "react-helmet";
 
 function App() {
   const [sideNav, setSideNav] = useState(false);
@@ -39,6 +40,53 @@ function App() {
 
   return (
     <div>
+      <Helmet>
+        <title>Shubham Prajapati - Software Developer Portfolio</title>
+        <meta
+          name="description"
+          content="Welcome to the portfolio of Shubham Prajapati, a passionate software developer specializing in web and mobile application development."
+        />
+        <meta
+          name="keywords"
+          content="Shubham Prajapati, software developer, web development, mobile development, portfolio, programming, coding"
+        />
+        <meta name="author" content="Shubham Prajapati" />
+        <link rel="canonical" href="https://shubhamprajapati528.netlify.app/" />
+
+        {/* Open Graph Tags */}
+        <meta
+          property="og:title"
+          content="Shubham Prajapati - Software Developer Portfolio"
+        />
+        <meta
+          property="og:description"
+          content="Welcome to the portfolio of Shubham Prajapati, a passionate software developer specializing in web and mobile application development."
+        />
+        <meta
+          property="og:url"
+          content="https://shubhamprajapati528.netlify.app/"
+        />
+        <meta property="og:type" content="website" />
+        <meta
+          property="og:image"
+          content="https://shubhamprajapati528.netlify.app/og-image.jpg"
+        />
+
+        {/* Twitter Card Tags */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+          name="twitter:title"
+          content="Shubham Prajapati - Software Developer Portfolio"
+        />
+        <meta
+          name="twitter:description"
+          content="Welcome to the portfolio of Shubham Prajapati, a passionate software developer specializing in web and mobile application development."
+        />
+        <meta
+          name="twitter:image"
+          content="https://shubhamprajapati528.netlify.app/twitter-image.jpg"
+        />
+      </Helmet>
       <Navbar
         NavStatus={{ sideNav, setSideNav }}
         Theam={{ isDark, setIsDark }}
