@@ -98,7 +98,7 @@ const Experience = () => {
               decoding="async"
               data-nimg="1"
               className="max-w-[120px]"
-              src="https://media.licdn.com/dms/image/C510BAQFlprn4dfmeiw/company-logo_200_200/0/1630618345519/dezhabdesignandconstruction_logo?e=1723075200&v=beta&t=nPkOXYybnR4EdvnUERZdROTgp-m9QRaagkBMj-iuFAA"
+              src="https://media.licdn.com/dms/image/v2/C510BAQFlprn4dfmeiw/company-logo_200_200/company-logo_200_200/0/1630618345519/dezhabdesignandconstruction_logo?e=1732147200&v=beta&t=cvxw0XzTpduW8oa87dbc21KbE71WKDga_n4KtN7kRJY"
               style={{ color: "transparent" }}
             ></img>
           </div>

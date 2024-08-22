@@ -196,12 +196,12 @@ const Skills = () => {
               <img
                 alt="Prometheus"
                 loading="lazy"
-                width="45"
+                width="64"
                 height="64"
                 decoding="async"
                 data-nimg="1"
                 className="transition-transform duration-300 md:hover:scale-110"
-                src="https://static-00.iconduck.com/assets.00/file-type-prometheus-icon-360x512-uvrmbt7e.png"
+                src="https://img.icons8.com/?size=100&id=Ei4ZhVQvIMHE&format=png&color=000000"
                 style={{ color: "red" }}
               ></img>
             </a>
