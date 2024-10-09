@@ -70,7 +70,7 @@ const Projects = () => {
               target="_blank"
               rel="noreferrer"
               className="self-start rounded-lg p-1.5 hover:bg-gray-50 [&_svg]:stroke-gray-500"
-              href="https://movies-app-frontend-shubhams-projects-9fdff750.vercel.app/"
+              href="https://syncmovie-watch.netlify.app/"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"

@@ -1,3 +1,5 @@
+import clawLaw from "../Assets/gptclaw.PNG";
+
 const Experience = () => {
   return (
     <section className="w-full py-16 md:py-20 2xl:py-24 bg-gray-50" id="work">
@@ -22,7 +24,7 @@ const Experience = () => {
               decoding="async"
               data-nimg="1"
               className="max-w-[120px]"
-              src="https://media.licdn.com/dms/image/D4D0BAQFWL-HNkd25Iw/company-logo_200_200/0/1719257435507/claw_lawyers_logo?e=1727913600&v=beta&t=M2zEKzRgcOZ5cqO3GHWBVdyzuncoNvgw0S2X6Fc3Xpg"
+              src={clawLaw}
               style={{ color: "transparent" }}
             ></img>
           </div>
