@@ -17,7 +17,7 @@ const Projects = () => {
             <a
               target="_blank"
               rel="noreferrer"
-              href="https://movies-app-frontend-shubhams-projects-9fdff750.vercel.app/"
+              href="https://syncmovie-watch.netlify.app/"
             >
               <img
                 alt="SyncMovie Watching Application"
