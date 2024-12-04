@@ -60,7 +60,7 @@ function App() {
       console.error("WebSocket error:", error);
     };
 
-    setSocket(newSocket);
+    // setSocket(newSocket);
 
     return () => {
       newSocket.close();
