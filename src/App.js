@@ -18,56 +18,6 @@ function App() {
   // const [viewportWidth, setViewportWidth] = useState(window.innerWidth);
 
   useEffect(() => {
-    const newSocket = new WebSocket(
-      "wss://20.198.24.104:8000/api/v1/gpt/generate"
-    );
-
-    newSocket.onopen = () => {
-      console.log("WebSocket connection established");
-      // if (promptsArrSelector.length > 0 && !promptsArrSelector[0].isDocument) {
-      //   newSocket.send(
-      //     JSON.stringify({
-      //       prompt: promptsArrSelector[0].text,
-      //       context: "",
-      //     })
-      //   );
-      // }
-    };
-
-    newSocket.onmessage = (event) => {
-      // const formattedData = event.data
-      //   .replaceAll("\\\\n\\\\n", "<br/>")
-      //   .replaceAll("\\\\n", "<br/>")
-      //   .replaceAll("\\n\\n", "<br/>")
-      //   .replaceAll("\\n", "<br/>")
-      //   .replaceAll("\n", "<br/>")
-      //   .replaceAll(/\*([^*]+)\*/g, "<strong>$1</strong>")
-      //   .replaceAll("\\", "")
-      //   .replaceAll('"', "")
-      //   .replaceAll(":", " :")
-      //   .replaceAll("#", "");
-      // setMessage((prevMessages) => [...prevMessages, formattedData]);
-    };
-
-    newSocket.onclose = (event) => {
-      console.log(event);
-      console.log("Closed code:", event.code);
-      console.log("Close reason:", event.reason);
-      console.log("WebSocket connection closed");
-    };
-
-    newSocket.onerror = (error) => {
-      console.error("WebSocket error:", error);
-    };
-
-    // setSocket(newSocket);
-
-    return () => {
-      newSocket.close();
-    };
-  }, []);
-
-  useEffect(() => {
     const handleResize = () => {
       // setViewportWidth(window.innerWidth);
       // Perform actions based on the viewport width change
