@@ -33,15 +33,17 @@ const Experience = () => {
               Fullstack developer
             </p>
             <ul className="flex list-disc flex-col gap-2 md:gap-1">
-              <li className="text-normal text-base">
-                Working as Fullstack intern.
+              <li className="text-base text-normal">
+                Full-Stack Development Intern.
               </li>
-              <li className="text-normal text-base">
-                Handle the while backend server.
+              <li className="text-base text-normal">
+                Managed and optimized the backend server.
               </li>
-              <li className="text-normal text-base">Adding new features.</li>
-              <li className="text-normal text-base">
-                Create UI with the help of figma design
+              <li className="text-base text-normal">
+                Implemented new features and enhancements.
+              </li>
+              <li className="text-base text-normal">
+                Developed UI components based on Figma designs.
               </li>
             </ul>
           </div>

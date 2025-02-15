@@ -54,6 +54,11 @@ const Projects = () => {
                 <p className="text-normal text-sm font-medium">Tailwindcss</p>
               </div>
               <div className="flex items-center justify-center rounded-xl bg-gray-200 px-5 py-1">
+                <p className="text-normal text-sm font-medium">
+                  Google Authentication
+                </p>
+              </div>
+              <div className="flex items-center justify-center rounded-xl bg-gray-200 px-5 py-1">
                 <p className="text-normal text-sm font-medium">Express.js</p>
               </div>
               <div className="flex items-center justify-center rounded-xl bg-gray-200 px-5 py-1">
@@ -96,7 +101,7 @@ const Projects = () => {
             <a
               target="_blank"
               rel="noreferrer"
-              href="https://shoping-deal.vercel.app/"
+              href="https://smart-shop-kro.netlify.app"
             >
               <img
                 alt="Shopping App"
@@ -107,13 +112,13 @@ const Projects = () => {
                 data-nimg="1"
                 className="rounded-xl shadow-lg transition-transform duration-500 md:hover:scale-105"
                 style={{ color: "transparent", objectFit: "cover" }}
-                src="https://res.cloudinary.com/dgsjppp4a/image/upload/c_crop,g_north,h_1830,w_1920/wptburafgwshbnurz82k.jpg"
+                src="https://res.cloudinary.com/dgsjppp4a/image/upload/v1739580588/s7c4ym9e7baiyss9cmse.png"
               ></img>
             </a>
           </div>
           <div className="flex flex-col gap-6 p-8 md:w-1/2 lg:p-12 md:order-first">
             <p className="text-lg md:text-xl font-semibold text-gray-900">
-              Shoping App
+              Shoping Application
             </p>
             <p className="text-normal text-base">
               Discover convenience at your fingertips with our shopping app!
@@ -127,13 +132,21 @@ const Projects = () => {
                 <p className="text-normal text-sm font-medium">Express</p>
               </div>
               <div className="flex items-center justify-center rounded-xl bg-gray-200 px-5 py-1">
-                <p className="text-normal text-sm font-medium">EJS</p>
+                <p className="text-normal text-sm font-medium">React JS</p>
               </div>
               <div className="flex items-center justify-center rounded-xl bg-gray-200 px-5 py-1">
-                <p className="text-normal text-sm font-medium">Passport Auth</p>
+                <p className="text-normal text-sm font-medium">Redux Toolkit</p>
               </div>
               <div className="flex items-center justify-center rounded-xl bg-gray-200 px-5 py-1">
-                <p className="text-normal text-sm font-medium">Bootstrap</p>
+                <p className="text-normal text-sm font-medium">JWT Auth</p>
+              </div>
+              <div className="flex items-center justify-center rounded-xl bg-gray-200 px-5 py-1">
+                <p className="text-normal text-sm font-medium">
+                  Google Authentication
+                </p>
+              </div>
+              <div className="flex items-center justify-center rounded-xl bg-gray-200 px-5 py-1">
+                <p className="text-normal text-sm font-medium">Tailwind</p>
               </div>
               <div className="flex items-center justify-center rounded-xl bg-gray-200 px-5 py-1">
                 <p className="text-normal text-sm font-medium">Javascipt</p>
@@ -146,7 +159,7 @@ const Projects = () => {
               target="_blank"
               rel="noreferrer"
               className="self-start rounded-lg p-1.5 hover:bg-gray-50 [&_svg]:stroke-gray-500"
-              href="https://shoping-deal.vercel.app/"
+              href="https://smart-shop-kro.netlify.app"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -172,7 +185,7 @@ const Projects = () => {
             <a
               target="_blank"
               rel="noreferrer"
-              href="https://chating-application.onrender.com/"
+              href="https://cheeta-chat.netlify.app/"
             >
               <img
                 alt="Chating application"
@@ -183,26 +196,34 @@ const Projects = () => {
                 data-nimg="1"
                 className="rounded-xl shadow-lg transition-transform duration-500 md:hover:scale-105"
                 style={{ color: "transparent", objectFit: "cover" }}
-                src="https://res.cloudinary.com/dgsjppp4a/image/upload/v1715059178/d6r2m27lj06bwhs4stoh.png"
+                src="https://res.cloudinary.com/dgsjppp4a/image/upload/v1739580559/i1cvekway4cnksjrbzvx.png"
               ></img>
             </a>
           </div>
           <div className="flex flex-col gap-6 p-8 md:w-1/2 lg:p-12">
             <p className="text-lg md:text-xl font-semibold text-gray-900">
-              Chating App
+              Chating Application
             </p>
             <p className="text-normal text-base">
-              Connecting people, one chat at a time. Welcome to our vibrant
-              community where conversations spark, friendships flourish, and
-              memories are made. Join us and let your words create waves of
-              connection across the digital landscape.
+              Connecting people, one chat at a time with the power of WebRTC.
+              Welcome to our vibrant community, where real-time messaging,
+              voice, and video conversations bring people closer. Spark
+              meaningful connections, build friendships, and create lasting
+              memories—one chat, call, or video at a time. Join us and let your
+              words and presence make waves across the digital landscape.
             </p>
             <div className="flex flex-wrap gap-2">
+              <div className="flex items-center justify-center rounded-xl bg-gray-200 px-5 py-1">
+                <p className="text-normal text-sm font-medium">React JS</p>
+              </div>
               <div className="flex items-center justify-center rounded-xl bg-gray-200 px-5 py-1">
                 <p className="text-normal text-sm font-medium">Express</p>
               </div>
               <div className="flex items-center justify-center rounded-xl bg-gray-200 px-5 py-1">
-                <p className="text-normal text-sm font-medium">EJS</p>
+                <p className="text-normal text-sm font-medium">Mongo DB</p>
+              </div>
+              <div className="flex items-center justify-center rounded-xl bg-gray-200 px-5 py-1">
+                <p className="text-normal text-sm font-medium">Web RTC</p>
               </div>
               <div className="flex items-center justify-center rounded-xl bg-gray-200 px-5 py-1">
                 <p className="text-normal text-sm font-medium">Socket.io</p>
@@ -211,17 +232,22 @@ const Projects = () => {
                 <p className="text-normal text-sm font-medium">Javascipt</p>
               </div>
               <div className="flex items-center justify-center rounded-xl bg-gray-200 px-5 py-1">
-                <p className="text-normal text-sm font-medium">Bootstrap</p>
+                <p className="text-normal text-sm font-medium">Tailwind</p>
               </div>
               <div className="flex items-center justify-center rounded-xl bg-gray-200 px-5 py-1">
-                <p className="text-normal text-sm font-medium">Passport Auth</p>
+                <p className="text-normal text-sm font-medium">JWT auth</p>
+              </div>
+              <div className="flex items-center justify-center rounded-xl bg-gray-200 px-5 py-1">
+                <p className="text-normal text-sm font-medium">
+                  Google Authentication
+                </p>
               </div>
             </div>
             <a
               target="_blank"
               rel="noreferrer"
               className="self-start rounded-lg p-1.5 hover:bg-gray-50 [&_svg]:stroke-gray-500"
-              href="https://chating-application.onrender.com/"
+              href="https://cheeta-chat.netlify.app/"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
