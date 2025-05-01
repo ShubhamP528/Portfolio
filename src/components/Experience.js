@@ -1,4 +1,6 @@
 import clawLaw from "../Assets/gptclaw.PNG";
+import rablo from "../Assets/rablo.png";
+import dezhub from "../Assets/dezhub.png";
 
 const Experience = () => {
   return (
@@ -63,7 +65,7 @@ const Experience = () => {
               decoding="async"
               data-nimg="1"
               className="max-w-[120px]"
-              src="https://rablo.in/wp-content/uploads/elementor/thumbs/Untitled_design__2_-removebg-preview-e1672118546472-q10x0nqhb6e977wbz7q2tgapsuip6f88d5713gnr5o.png"
+              src={rablo}
               style={{ color: "transparent" }}
             ></img>
           </div>
@@ -102,7 +104,7 @@ const Experience = () => {
               decoding="async"
               data-nimg="1"
               className="max-w-[120px]"
-              src="https://media.licdn.com/dms/image/v2/C510BAQFlprn4dfmeiw/company-logo_200_200/company-logo_200_200/0/1630618345519/dezhabdesignandconstruction_logo?e=1741824000&v=beta&t=hDsz5u5DXkN2S8_Y8BxOiN8v1MSuMiQ5avXTivPxJts"
+              src={dezhub}
               style={{ color: "transparent" }}
             ></img>
           </div>
