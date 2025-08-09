@@ -37,11 +37,11 @@ const About = () => {
               >
                 self-proclaimed developer
               </a>
-              &nbsp;who specializes in full stack development (React.js &
-              Node.js). I am enthusiastic about bringing the technical and
-              visual aspects of digital products to life. User experience, pixel
-              perfect design, and writing clear, readable, highly performant
-              code matters to me.
+              &nbsp;who specializes in full stack development (React.js, Node.js
+              & React Native). I am enthusiastic about bringing the technical
+              and visual aspects of digital products to life. User experience,
+              pixel perfect design, and writing clear, readable, highly
+              performant code matters to me.
             </p>
             <p className="text-normal text-base">
               I began my journey as a web developer in 2023, and since then,
