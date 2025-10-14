@@ -87,7 +87,7 @@ const Experience = () => {
                 </time>
                 <ul className="flex list-disc flex-col gap-2 md:gap-1 pl-5">
                   <li className="text-base text-normal">
-                    Full-Stack Development Intern.
+                    Full-Stack Development
                   </li>
                   <li className="text-base text-normal">
                     Developed UI components based on Figma designs.
@@ -121,9 +121,7 @@ const Experience = () => {
               Backend developer
             </p>
             <ul className="flex list-disc flex-col gap-2 md:gap-1">
-              <li className="text-normal text-base">
-                Worked as backend intern.
-              </li>
+              <li className="text-normal text-base">Worked as backend</li>
               <li className="text-normal text-base">
                 Test the existing APIs using postman and fix the error .
               </li>
@@ -160,9 +158,7 @@ const Experience = () => {
               Backend developer
             </p>
             <ul className="flex list-disc flex-col gap-2 md:gap-1">
-              <li className="text-normal text-base">
-                Worked as backend intern.
-              </li>
+              <li className="text-normal text-base">Worked as backend</li>
               <li className="text-normal text-base">
                 Using Go lang write logical code for backend to create new
                 modules and new go Routines.
