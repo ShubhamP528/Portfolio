@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import "./App.css";
+import "./index.css";
 import About from "./components/About";
 import Contact from "./components/Contact";
 import Experience from "./components/Experience";
@@ -13,100 +13,56 @@ import { Helmet } from "react-helmet";
 
 function App() {
   const [sideNav, setSideNav] = useState(false);
-  const [isDark, setIsDark] = useState(false);
-  // console.log(sideNav);
-  // const [viewportWidth, setViewportWidth] = useState(window.innerWidth);
+  const [isDark, setIsDark] = useState(true); // Default to dark mode for a premium feel
+
+  useEffect(() => {
+    if (isDark) {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+  }, [isDark]);
 
   useEffect(() => {
     const handleResize = () => {
-      // setViewportWidth(window.innerWidth);
-      // Perform actions based on the viewport width change
-      // For example:
       if (window.innerWidth > 768) {
         setSideNav(false);
-      } else {
-        // Do something else
       }
     };
-
-    // Add event listener for window resize
     window.addEventListener("resize", handleResize);
-
-    // Cleanup function to remove event listener when component unmounts
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []); // Empty dependency array ensures that effect runs only once after initial render
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   return (
-    <div>
+    <div className="min-h-screen relative overflow-hidden bg-background transition-colors duration-300">
+      {/* Background Animated Blobs */}
+      <div className="fixed inset-0 overflow-hidden pointer-events-none z-0">
+        <div className="absolute top-[-10%] left-[-10%] w-96 h-96 bg-primary-500/20 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob"></div>
+        <div className="absolute top-[20%] right-[-10%] w-96 h-96 bg-purple-500/20 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob animation-delay-2000"></div>
+        <div className="absolute bottom-[-20%] left-[20%] w-96 h-96 bg-blue-500/20 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob animation-delay-4000"></div>
+      </div>
+
       <Helmet>
-        <title>Shubham Prajapati - Software Developer Portfolio</title>
-        <meta
-          name="description"
-          content="Welcome to the portfolio of Shubham Prajapati, a passionate software developer specializing in web and mobile application development."
-        />
-        <meta
-          name="keywords"
-          content="Shubham Prajapati, software developer, web development, mobile development, portfolio, programming, coding"
-        />
-        <meta name="author" content="Shubham Prajapati" />
-        <link rel="canonical" href="https://shubhamprajapati528.netlify.app/" />
-
-        {/* Open Graph Tags */}
-        <meta
-          property="og:title"
-          content="Shubham Prajapati - Software Developer Portfolio"
-        />
-        <meta
-          property="og:description"
-          content="Welcome to the portfolio of Shubham Prajapati, a passionate software developer specializing in web and mobile application development."
-        />
-        <meta
-          property="og:url"
-          content="https://shubhamprajapati528.netlify.app/"
-        />
-        <meta property="og:type" content="website" />
-        <meta
-          property="og:image"
-          content="https://shubhamprajapati528.netlify.app/og-image.jpg"
-        />
-
-        {/* Twitter Card Tags */}
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta
-          name="twitter:title"
-          content="Shubham Prajapati - Software Developer Portfolio"
-        />
-        <meta
-          name="twitter:description"
-          content="Welcome to the portfolio of Shubham Prajapati, a passionate software developer specializing in web and mobile application development."
-        />
-        <meta
-          name="twitter:image"
-          content="https://shubhamprajapati528.netlify.app/twitter-image.jpg"
-        />
+        <title>Shubham Prajapati - Software Developer</title>
+        <meta name="description" content="Portfolio of Shubham Prajapati, a passionate software developer." />
       </Helmet>
-      <Navbar
-        NavStatus={{ sideNav, setSideNav }}
-        Theam={{ isDark, setIsDark }}
-      />
-      <SideNavBar
-        NavStatus={{ sideNav, setSideNav }}
-        Theam={{ isDark, setIsDark }}
-      />
-      <main className="flex min-h-screen w-full flex-col">
-        <Hero />
-        <About />
-        <Skills />
-        <Experience />
-        <Projects />
-        <Contact />
-      </main>
-      <Footer />
-    </div>
 
-    // <Test />
+      <div className="relative z-10 flex flex-col min-h-screen">
+        <Navbar NavStatus={{ sideNav, setSideNav }} Theam={{ isDark, setIsDark }} />
+        <SideNavBar NavStatus={{ sideNav, setSideNav }} Theam={{ isDark, setIsDark }} />
+        
+        <main className="flex-grow w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col gap-24 py-20">
+          <Hero />
+          <About />
+          <Skills />
+          <Experience />
+          <Projects />
+          <Contact />
+        </main>
+        
+        <Footer />
+      </div>
+    </div>
   );
 }
 

@@ -1,296 +1,60 @@
+const skillsData = [
+  { name: 'JavaScript', img: 'https://sagarshah.dev/_next/static/media/icon-javascript.d5945e90.svg', link: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript' },
+  { name: 'React', img: 'https://sagarshah.dev/_next/static/media/icon-react.f09634b9.svg', link: 'https://react.dev/' },
+  { name: 'Node.js', img: 'https://sagarshah.dev/_next/static/media/icon-nodejs.e9fdb7cb.svg', link: 'https://nodejs.org/' },
+  { name: 'Express.js', img: 'https://sagarshah.dev/_next/static/media/icon-express.14fe67e7.svg', link: 'https://expressjs.com/' },
+  { name: 'Socket.io', img: 'https://sagarshah.dev/_next/static/media/icon-socket.b8aba332.svg', link: 'https://socket.io/' },
+  { name: 'PostgreSQL', img: 'https://sagarshah.dev/_next/static/media/icon-postgresql.37b474b1.svg', link: 'https://www.postgresql.org/' },
+  { name: 'MongoDB', img: 'https://sagarshah.dev/_next/static/media/icon-mongodb.e1664f55.svg', link: 'https://www.mongodb.com/' },
+  { name: 'Tailwindcss', img: 'https://sagarshah.dev/_next/static/media/icon-tailwindcss.6649f603.svg', link: 'https://tailwindcss.com/' },
+  { name: 'Git', img: 'https://sagarshah.dev/_next/static/media/icon-git.e364d254.svg', link: 'https://git-scm.com/' },
+  { name: 'Go', img: 'https://go.dev/blog/go-brand/Go-Logo/PNG/Go-Logo_Blue.png', link: 'https://go.dev/' },
+  { name: 'Prometheus', img: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/prometheus/prometheus-original.svg', link: 'https://prometheus.io/' },
+  { name: 'Grafana', img: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/grafana/grafana-original.svg', link: 'https://grafana.com/' },
+  { name: 'C++', img: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/cplusplus/cplusplus-original.svg', link: 'https://isocpp.org/' },
+  { name: 'Bootstrap', img: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/bootstrap/bootstrap-original.svg', link: 'https://getbootstrap.com/' },
+  { name: 'Postman', img: 'https://voyager.postman.com/logo/postman-logo-icon-orange.svg', link: 'https://www.postman.com/' },
+  { name: 'Docker', img: 'https://cdn.worldvectorlogo.com/logos/docker-4.svg', link: 'https://www.docker.com/' },
+];
+
 const Skills = () => {
   return (
-    <section className="w-full bg-gray py-16 md:py-20 2xl:py-24">
-      <div className="mx-auto flex w-full max-w-7xl flex-col gap-6 px-4 md:gap-12 md:px-8">
-        <div className="flex flex-col items-center gap-4">
-          <div className="self-center">
-            <div className="flex items-center justify-center rounded-xl bg-gray-200 px-5 py-1">
-              <p className="text-normal text-sm font-medium">Skills</p>
-            </div>
+    <section className="w-full py-16" id="skills">
+      <div className="flex flex-col items-center gap-16">
+        <div className="flex flex-col items-center gap-4 text-center max-w-2xl">
+          <div className="inline-flex items-center justify-center rounded-full bg-primary-500/10 text-primary-500 dark:text-primary-400 border border-primary-500/20 px-6 py-2 backdrop-blur-md">
+            <span className="text-sm font-semibold tracking-wider uppercase">Skills</span>
           </div>
-          <p className="text-normal text-lg md:text-xl max-w-xl text-center">
+          <h2 className="text-3xl md:text-5xl font-bold font-heading text-text">
+            Technologies & Tools
+          </h2>
+          <p className="text-base md:text-lg text-text-muted mt-2">
             The skills, tools and technologies I am really good at:
           </p>
         </div>
-        <div className="grid grid-cols-3 gap-y-4 md:grid-cols-6 md:gap-y-8 lg:grid-cols-8 lg:gap-y-12">
-          <div className="flex flex-col items-center gap-2">
-            <a
-              target="_blank"
-              rel="noreferrer"
-              href="https://developer.mozilla.org/en-US/docs/Web/JavaScript"
-            >
-              <img
-                alt="Javascript"
-                loading="lazy"
-                width="64"
-                height="64"
-                decoding="async"
-                data-nimg="1"
-                className="transition-transform duration-300 md:hover:scale-110"
-                src="https://sagarshah.dev/_next/static/media/icon-javascript.d5945e90.svg"
-                style={{ color: "transparent" }}
-              ></img>
-            </a>
-            <p className="text-normal text-base md:text-lg">Javascript</p>
-          </div>
 
-          <div className="flex flex-col items-center gap-2">
-            <a target="_blank" rel="noreferrer" href="https://react.dev/">
-              <img
-                alt="React"
-                loading="lazy"
-                width="71"
-                height="64"
-                decoding="async"
-                data-nimg="1"
-                className="transition-transform duration-300 md:hover:scale-110"
-                src="https://sagarshah.dev/_next/static/media/icon-react.f09634b9.svg"
-                style={{ color: "transparent" }}
-              ></img>
-            </a>
-            <p className="text-normal text-base md:text-lg">React</p>
-          </div>
-
-          <div className="flex flex-col items-center gap-2">
-            <a target="_blank" rel="noreferrer" href="https://nodejs.org/">
-              <img
-                alt="Node.js"
-                loading="lazy"
-                width="57"
-                height="64"
-                decoding="async"
-                data-nimg="1"
-                className="transition-transform duration-300 md:hover:scale-110"
-                src="https://sagarshah.dev/_next/static/media/icon-nodejs.e9fdb7cb.svg"
-                style={{ color: "transparent" }}
-              />
-            </a>
-            <p className="text-normal text-base md:text-lg">Node.js</p>
-          </div>
-
-          <div className="flex flex-col items-center gap-2">
-            <a target="_blank" rel="noreferrer" href="https://expressjs.com/">
-              <img
-                alt="Express.js"
-                loading="lazy"
-                width="65"
-                height="64"
-                decoding="async"
-                data-nimg="1"
-                className="transition-transform duration-300 md:hover:scale-110"
-                src="https://sagarshah.dev/_next/static/media/icon-express.14fe67e7.svg"
-                style={{ color: "transparent" }}
-              />
-            </a>
-            <p className="text-normal text-base md:text-lg">Express.js</p>
-          </div>
-
-          <div className="flex flex-col items-center gap-2">
-            <a target="_blank" rel="noreferrer" href="https://socket.io/">
-              <img
-                alt="Socket.io"
-                loading="lazy"
-                width="65"
-                height="64"
-                decoding="async"
-                data-nimg="1"
-                className="transition-transform duration-300 md:hover:scale-110"
-                src="https://sagarshah.dev/_next/static/media/icon-socket.b8aba332.svg"
-                style={{ color: "transparent" }}
-              />
-            </a>
-            <p className="text-normal text-base md:text-lg">Socket.io</p>
-          </div>
-
-          <div className="flex flex-col items-center gap-2">
-            <a
-              target="_blank"
-              rel="noreferrer"
-              href="https://www.postgresql.org/"
-            >
-              <img
-                alt="PostgreSQL"
-                loading="lazy"
-                width="64"
-                height="64"
-                decoding="async"
-                data-nimg="1"
-                className="transition-transform duration-300 md:hover:scale-110"
-                src="https://sagarshah.dev/_next/static/media/icon-postgresql.37b474b1.svg"
-                style={{ color: "transparent" }}
-              />
-            </a>
-            <p className="text-normal text-base md:text-lg">PostgreSQL</p>
-          </div>
-
-          <div className="flex flex-col items-center gap-2">
-            <a target="_blank" rel="noreferrer" href="https://www.mongodb.com/">
-              <img
-                alt="MongoDB"
-                loading="lazy"
-                width="31"
-                height="64"
-                decoding="async"
-                data-nimg="1"
-                className="transition-transform duration-300 md:hover:scale-110"
-                src="https://sagarshah.dev/_next/static/media/icon-mongodb.e1664f55.svg"
-                style={{ color: "transparent" }}
-              ></img>
-            </a>
-            <p className="text-normal text-base md:text-lg">MongoDB</p>
-          </div>
-
-          <div className="flex flex-col items-center gap-2">
-            <a target="_blank" rel="noreferrer" href="https://tailwindcss.com/">
-              <img
-                alt="Tailwindcss"
-                loading="lazy"
-                width="106"
-                height="64"
-                decoding="async"
-                data-nimg="1"
-                className="transition-transform duration-300 md:hover:scale-110"
-                src="https://sagarshah.dev/_next/static/media/icon-tailwindcss.6649f603.svg"
-                style={{ color: "transparent" }}
-              ></img>
-            </a>
-            <p className="text-normal text-base md:text-lg">Tailwindcss</p>
-          </div>
-
-          <div className="flex flex-col items-center gap-2">
-            <a target="_blank" rel="noreferrer" href="https://git-scm.com/">
-              <img
-                alt="Git"
-                loading="lazy"
-                width="64"
-                height="64"
-                decoding="async"
-                data-nimg="1"
-                className="transition-transform duration-300 md:hover:scale-110"
-                src="https://sagarshah.dev/_next/static/media/icon-git.e364d254.svg"
-                style={{ color: "transparent" }}
-              ></img>
-            </a>
-            <p className="text-normal text-base md:text-lg">Git</p>
-          </div>
-
-          <div className="flex flex-col items-center gap-2">
-            <a target="_blank" rel="noreferrer" href="https://go.dev/">
-              <img
-                alt="Go"
-                loading="lazy"
-                width="73"
-                height="64"
-                decoding="async"
-                data-nimg="1"
-                className="transition-transform duration-300 md:hover:scale-110"
-                src="https://go.dev/blog/go-brand/Go-Logo/PNG/Go-Logo_Blue.png"
-                style={{ color: "transparent" }}
-              ></img>
-            </a>
-            <p className="text-normal text-base md:text-lg">Go</p>
-          </div>
-
-          <div className="flex flex-col items-center gap-2">
-            <a target="_blank" rel="noreferrer" href="https://prometheus.io/">
-              <img
-                alt="Prometheus"
-                loading="lazy"
-                width="64"
-                height="64"
-                decoding="async"
-                data-nimg="1"
-                className="transition-transform duration-300 md:hover:scale-110"
-                src="https://img.icons8.com/?size=100&id=Ei4ZhVQvIMHE&format=png&color=000000"
-                style={{ color: "red" }}
-              ></img>
-            </a>
-            <p className="text-normal text-base md:text-lg">Prometheus</p>
-          </div>
-
-          <div className="flex flex-col items-center gap-2">
-            <a target="_blank" rel="noreferrer" href="https://grafana.com/">
-              <img
-                alt="Grafana"
-                loading="lazy"
-                width="64"
-                height="64"
-                decoding="async"
-                data-nimg="1"
-                className="transition-transform duration-300 md:hover:scale-110"
-                src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Grafana_icon.svg/375px-Grafana_icon.svg.png"
-                style={{ color: "transparent" }}
-              ></img>
-            </a>
-            <p className="text-normal text-base md:text-lg">Grafana</p>
-          </div>
-          <div className="flex flex-col items-center gap-2">
-            <a target="_blank" rel="noreferrer" href="https://isocpp.org/">
-              <img
-                alt="C++"
-                loading="lazy"
-                width="62"
-                height="64"
-                decoding="async"
-                data-nimg="1"
-                className="transition-transform duration-300 md:hover:scale-110"
-                src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/ISO_C%2B%2B_Logo.svg/459px-ISO_C%2B%2B_Logo.svg.png"
-                style={{ color: "transparent" }}
-              ></img>
-            </a>
-            <p className="text-normal text-base md:text-lg">C++</p>
-          </div>
-          <div className="flex flex-col items-center gap-2">
-            <a
-              target="_blank"
-              rel="noreferrer"
-              href="https://getbootstrap.com/docs/5.0/about/brand/"
-            >
-              <img
-                alt="Bootstrap"
-                loading="lazy"
-                width="85"
-                height="64"
-                decoding="async"
-                data-nimg="1"
-                className="transition-transform duration-300 md:hover:scale-110"
-                src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Bootstrap_logo.svg/768px-Bootstrap_logo.svg.png"
-                style={{ color: "transparent" }}
-              ></img>
-            </a>
-            <p className="text-normal text-base md:text-lg">Bootstrap</p>
-          </div>
-          <div className="flex flex-col items-center gap-2">
-            <a target="_blank" rel="noreferrer" href="https://www.postman.com/">
-              <img
-                alt="Postman"
-                loading="lazy"
-                width="68"
-                height="64"
-                decoding="async"
-                data-nimg="1"
-                className="transition-transform duration-300 md:hover:scale-110"
-                src="https://voyager.postman.com/logo/postman-logo-icon-orange.svg"
-                style={{ color: "transparent" }}
-              ></img>
-            </a>
-            <p className="text-normal text-base md:text-lg">Postman</p>
-          </div>
-          <div className="flex flex-col items-center gap-2">
-            <a target="_blank" rel="noreferrer" href="https://www.docker.com/">
-              <img
-                alt="Javascript"
-                loading="lazy"
-                width="60"
-                height="64"
-                decoding="async"
-                data-nimg="1"
-                className="transition-transform duration-300 md:hover:scale-110"
-                src="https://cdn.worldvectorlogo.com/logos/docker-4.svg"
-                style={{ color: "transparent" }}
-              ></img>
-            </a>
-            <p className="text-normal text-base md:text-lg">Docker</p>
+        <div className="w-full max-w-5xl glass-card p-8 md:p-12">
+          <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-8 gap-8 md:gap-12">
+            {skillsData.map((skill, index) => (
+              <div key={index} className="flex flex-col items-center gap-4 group">
+                <a
+                  target="_blank"
+                  rel="noreferrer"
+                  href={skill.link}
+                  className="flex items-center justify-center w-16 h-16 md:w-20 md:h-20 rounded-2xl glass transition-all duration-300 group-hover:scale-110 group-hover:shadow-primary-500/20 group-hover:-translate-y-2 p-3"
+                >
+                  <img
+                    alt={skill.name}
+                    loading="lazy"
+                    className="w-full h-full object-contain filter drop-shadow-md"
+                    src={skill.img}
+                  />
+                </a>
+                <p className="text-sm md:text-base font-medium text-text-muted group-hover:text-primary-500 transition-colors">
+                  {skill.name}
+                </p>
+              </div>
+            ))}
           </div>
         </div>
       </div>

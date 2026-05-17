@@ -2,27 +2,59 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@layer base {
+  :root {
+    --color-background: 250 250 250;
+    --color-surface: 255 255 255;
+    --color-surface-hover: 243 244 246;
+    --color-text: 15 23 42;
+    --color-text-muted: 71 85 105;
+  }
+
+  .dark {
+    --color-background: 15 23 42;
+    --color-surface: 30 41 59;
+    --color-surface-hover: 51 65 85;
+    --color-text: 248 250 252;
+    --color-text-muted: 148 163 184;
+  }
+
+  body {
+    @apply bg-background text-text transition-colors duration-300 font-sans;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading tracking-tight;
+  }
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+@layer utilities {
+  .glass {
+    @apply bg-white/70 dark:bg-slate-900/70 backdrop-blur-md border border-white/20 dark:border-slate-800/50 shadow-xl;
+  }
+  
+  .glass-card {
+    @apply bg-white/40 dark:bg-slate-800/40 backdrop-blur-lg border border-white/30 dark:border-slate-700/50 shadow-lg rounded-2xl hover:shadow-2xl transition-all duration-300;
+  }
+
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary-500 to-purple-600 dark:from-primary-400 dark:to-purple-400;
+  }
 }
 
-html {
-  scroll-behavior: smooth;
-  line-height: 1.5;
-  tab-size: 4;
-  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
-    Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif,
-    Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
-  font-feature-settings: normal;
-  font-variation-settings: normal;
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-slate-300 dark:bg-slate-700 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-slate-400 dark:bg-slate-600;
 }
