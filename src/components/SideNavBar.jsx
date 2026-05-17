@@ -1,4 +1,5 @@
 import { FiX, FiSun, FiMoon } from "react-icons/fi";
+import { motion, AnimatePresence } from "framer-motion";
 
 const SideNavBar = ({ NavStatus, Theam }) => {
   const ShowSideNavBar = () => {
@@ -37,69 +38,111 @@ const SideNavBar = ({ NavStatus, Theam }) => {
   ];
 
   return (
-    <div className={`md:hidden`}>
+    <AnimatePresence>
       {NavStatus.sideNav && (
-        <div
-          className="fixed inset-0 z-50 bg-slate-900/40 backdrop-blur-sm transition-opacity"
-          onClick={ShowSideNavBar}
-        ></div>
-      )}
-      <div
-        className={`fixed z-50 inset-y-0 right-0 h-full max-w-xs w-full glass shadow-2xl transition-transform duration-300 ease-in-out ${
-          NavStatus.sideNav ? "translate-x-0" : "translate-x-full"
-        }`}
-      >
-        <div className="flex items-center justify-between border-b border-surface-hover p-4">
-          <h3 className="text-2xl font-bold font-heading text-text">
-            <span className="text-primary-500">{"<"}</span>
-            SP
-            <span className="text-primary-500">{"/>"}</span>
-          </h3>
-          <button
+        <div className="fixed inset-0 z-50 md:hidden">
+          {/* Backdrop Overlay */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.3 }}
+            className="fixed inset-0 bg-slate-950/60 backdrop-blur-md"
             onClick={ShowSideNavBar}
-            className="p-2 rounded-xl hover:bg-surface-hover text-text transition-colors active:scale-95"
-            aria-label="Close Menu"
+          />
+          
+          {/* Drawer Menu */}
+          <motion.div
+            initial={{ x: "100%" }}
+            animate={{ x: 0 }}
+            exit={{ x: "100%" }}
+            transition={{ type: "spring", damping: 25, stiffness: 220 }}
+            className="fixed inset-y-0 right-0 h-full max-w-xs w-full glass border-l border-white/5 shadow-2xl flex flex-col z-50"
           >
-            <FiX size={24} />
-          </button>
-        </div>
-        
-        <div className="border-b border-surface-hover p-4">
-          <ul className="flex flex-col gap-2">
-            {navLinks.map((link) => (
-              <li key={link.name}>
-                <a
-                  href={link.href}
-                  onClick={BtnShowSideNavBar}
-                  className="block w-full px-4 py-3 rounded-xl text-base font-semibold text-text-muted hover:text-primary-500 hover:bg-surface-hover transition-all"
-                >
-                  {link.name}
-                </a>
-              </li>
-            ))}
-          </ul>
-        </div>
-        
-        <div className="flex flex-col gap-6 p-6">
-          <div className="flex items-center justify-between bg-surface-hover p-4 rounded-xl">
-            <p className="text-sm font-semibold text-text">Theme</p>
-            <button
-              onClick={switchButton}
-              className="p-2 rounded-full glass hover:bg-surface-hover text-text transition-all duration-300"
-              aria-label="Toggle Theme"
+            <div className="flex items-center justify-between border-b border-white/5 p-5">
+              <h3 className="text-xl font-mono font-black text-text">
+                <span className="text-cyan-500">{"<"}</span>
+                SP
+                <span className="text-cyan-500">{"/>"}</span>
+              </h3>
+              <button
+                onClick={ShowSideNavBar}
+                className="p-2 rounded-xl bg-slate-100 dark:bg-slate-800/80 border border-black/5 dark:border-white/5 text-text hover:text-cyan-400 transition-colors active:scale-95"
+                aria-label="Close Menu"
+              >
+                <FiX size={20} />
+              </button>
+            </div>
+            
+            <div className="p-4 mt-4">
+              <motion.ul 
+                initial="hidden"
+                animate="visible"
+                variants={{
+                  hidden: { opacity: 0 },
+                  visible: { opacity: 1, transition: { staggerChildren: 0.1, delayChildren: 0.1 } }
+                }}
+                className="flex flex-col gap-3"
+              >
+                {navLinks.map((link) => (
+                  <motion.li 
+                    key={link.name}
+                    variants={{
+                      hidden: { opacity: 0, x: 20 },
+                      visible: { opacity: 1, x: 0 }
+                    }}
+                  >
+                    <a
+                      href={link.href}
+                      onClick={BtnShowSideNavBar}
+                      className="block w-full px-5 py-3.5 rounded-2xl text-base font-bold text-text-muted hover:text-cyan-400 hover:bg-slate-100 dark:hover:bg-slate-800/60 border border-transparent hover:border-black/5 dark:hover:border-white/5 transition-all"
+                    >
+                      {link.name}
+                    </a>
+                  </motion.li>
+                ))}
+              </motion.ul>
+            </div>
+            
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.4 }}
+              className="flex flex-col gap-6 p-6 mt-auto border-t border-white/5"
             >
-              {Theam.isDark ? <FiSun size={20} className="text-amber-400" /> : <FiMoon size={20} className="text-slate-600" />}
-            </button>
-          </div>
-          <button
-            onClick={handleDownload}
-            className="w-full inline-flex items-center justify-center rounded-xl bg-primary-600 hover:bg-primary-500 px-4 py-3 font-semibold text-white transition-colors shadow-lg shadow-primary-500/30"
-          >
-            Download CV
-          </button>
+              {/* Sliding Theme Toggle pill inside Drawer */}
+              <div className="flex items-center justify-between bg-slate-100 dark:bg-slate-800/60 border border-black/5 dark:border-white/5 p-4 rounded-2xl">
+                <p className="text-sm font-bold text-text pl-1">Aesthetic Mode</p>
+                <div 
+                  onClick={switchButton}
+                  className="relative w-14 h-7 rounded-full bg-slate-200 dark:bg-slate-900 border border-black/5 dark:border-white/5 p-1 flex items-center justify-between cursor-pointer select-none transition-colors duration-300"
+                >
+                  <div className="text-[10px] pl-1.5 text-slate-500"><FiSun size={10} className="text-amber-500" /></div>
+                  <div className="text-[10px] pr-1.5 text-slate-500"><FiMoon size={10} /></div>
+                  {/* Sliding Capsule */}
+                  <motion.div 
+                    layout
+                    transition={{ type: "spring", stiffness: 500, damping: 30 }}
+                    className="absolute w-5 h-5 rounded-full bg-white dark:bg-slate-800 border border-black/10 dark:border-white/10 shadow-md flex items-center justify-center"
+                    style={{ left: Theam.isDark ? 'calc(100% - 1.5rem)' : '0.25rem' }}
+                  >
+                    {Theam.isDark ? <FiMoon size={9} className="text-indigo-400" /> : <FiSun size={9} className="text-amber-500" />}
+                  </motion.div>
+                </div>
+              </div>
+
+              {/* Download CV Gradient Button */}
+              <button
+                onClick={handleDownload}
+                className="w-full inline-flex items-center justify-center rounded-2xl bg-gradient-to-r from-cyan-500 to-indigo-600 hover:from-cyan-400 hover:to-indigo-500 py-4 font-bold text-white transition-all shadow-lg shadow-cyan-500/10 text-sm tracking-wide uppercase"
+              >
+                Download CV
+              </button>
+            </motion.div>
+          </motion.div>
         </div>
-      </div>
-    </div>
+      )}
+    </AnimatePresence>
   );
 };
 

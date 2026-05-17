@@ -1,100 +1,195 @@
 import { FiExternalLink } from 'react-icons/fi';
+import { motion } from 'framer-motion';
 
 const projects = [
   {
     title: "SyncMovie Watching Application",
-    description: "Experience the joy of synchronized movie magic with our innovative app! Connect with friends, near or far, and watch your favorite films together in perfect harmony. Whether it's laughter, tears, or edge-of-your-seat suspense, share every cinematic moment in real-time.",
+    tagline: "REAL-TIME STREAM SYNC ENGINE",
+    description: "Experience synchronized movie magic! Connect with friends and watch films in perfect real-time harmony. Share reactions and video controls seamlessly.",
     image: "https://res.cloudinary.com/dgsjppp4a/image/upload/v1715045687/yr0ynwae0whq9smnqvo1.png",
     link: "https://syncmovie-watch.netlify.app/",
-    tech: ["React", "Socket.io", "Tailwindcss", "Google Auth", "Express.js", "Youtube API", "MongoDB", "Formik"]
+    tech: ["React", "Socket.io", "Express.js", "MongoDB", "Google Auth", "Formik"],
+    metrics: [
+      "⚡ Ultra-low latency stream synchronization via Socket.io channels.",
+      "🎥 Integrated Youtube & external iframe player hooks.",
+      "🔐 Secure third-party authentication integration."
+    ],
+    accentClass: "from-cyan-500 to-blue-600",
+    glowClass: "hover:shadow-cyan-500/10 hover:border-cyan-500/30",
+    accentColor: "text-cyan-600 dark:text-cyan-400"
   },
   {
-    title: "Shoping Application",
-    description: "Discover convenience at your fingertips with our shopping app! Browse, buy, and delight in a seamless shopping experience. From must-have essentials to trending favorites, explore a world of endless possibilities, all in one place. Elevate your shopping journey today!",
+    title: "Smart Shop Shopping Platform",
+    tagline: "HIGH-FIDELITY E-COMMERCE ENGINE",
+    description: "Discover convenience at your fingertips! A complete commerce client featuring full checkout cycles, persistent cart, and responsive grids.",
     image: "https://res.cloudinary.com/dgsjppp4a/image/upload/v1739580588/s7c4ym9e7baiyss9cmse.png",
     link: "https://smart-shop-kro.netlify.app",
-    tech: ["Express", "React JS", "Redux Toolkit", "JWT Auth", "Google Auth", "Tailwind", "Javascript", "MongoDB"]
+    tech: ["React", "Redux Toolkit", "Express", "MongoDB", "JWT Auth", "Tailwind"],
+    metrics: [
+      "🛒 Redux Toolkit global state store with browser state caching.",
+      "🛡️ JWT & Google OAuth double-layered session configurations.",
+      "🔥 High-performance paginated product aggregate lookups."
+    ],
+    accentClass: "from-indigo-500 to-purple-600",
+    glowClass: "hover:shadow-indigo-500/10 hover:border-indigo-500/30",
+    accentColor: "text-indigo-600 dark:text-indigo-400"
   },
   {
-    title: "Chating Application",
-    description: "Connecting people, one chat at a time with the power of WebRTC. Welcome to our vibrant community, where real-time messaging, voice, and video conversations bring people closer. Spark meaningful connections, build friendships, and create lasting memories.",
+    title: "Cheeta WebRTC Chating System",
+    tagline: "PEER-TO-PEER VIDEO & CHAT CHANNEL",
+    description: "Connecting people, one room at a time. A peer-to-peer real-time media router supporting room creation, camera switching, and low-latency texts.",
     image: "https://res.cloudinary.com/dgsjppp4a/image/upload/v1739580559/i1cvekway4cnksjrbzvx.png",
     link: "https://cheeta-chat.netlify.app/",
-    tech: ["React JS", "Express", "Mongo DB", "Web RTC", "Socket.io", "Javascript", "Tailwind", "JWT Auth", "Google Auth"]
+    tech: ["React JS", "WebRTC", "Socket.io", "Express", "MongoDB", "JWT Auth"],
+    metrics: [
+      "💬 Zero-latency voice and video sessions direct peer connections.",
+      "🔒 Private room passcodes and dynamic session router channels.",
+      "💡 Live client indicators and automatic offline syncs."
+    ],
+    accentClass: "from-purple-500 to-pink-600",
+    glowClass: "hover:shadow-purple-500/10 hover:border-purple-500/30",
+    accentColor: "text-purple-600 dark:text-purple-400"
   },
   {
-    title: "Link Breeze",
-    description: "Experience effortless link management with Link Breeze! ✨ Shorten URLs instantly, track analytics seamlessly, and optimize your online presence—all in one place. Whether you're a marketer, content creator, or just love simplicity, Link Breeze makes link sharing smarter and more efficient.",
+    title: "Link Breeze Analytics SHORTENER",
+    tagline: "URL CONDENSER & ANALYTICS LOGGER",
+    description: "Experience effortless link management! Shorten URLs instantly, log traffic details, and optimize your overall redirection analytics.",
     image: "https://res.cloudinary.com/dgsjppp4a/image/upload/v1739583370/mbjdyotqrcb9wq502ely.png",
-    link: "https://linkbreeze.netlify.app/",
-    tech: ["Express", "React JS", "JWT Auth", "Tailwind", "Javascript", "MongoDB"]
+    link: "https://linkbreeze.netlify.netlify.app/",
+    tech: ["React JS", "Express", "MongoDB", "JWT Auth", "Tailwind", "Javascript"],
+    metrics: [
+      "✨ High-performance custom hash URL identifier algorithm.",
+      "📊 Live traffic analytics chart displaying geolocation clicks.",
+      "⚡ Highly optimized database query index architectures."
+    ],
+    accentClass: "from-amber-500 to-rose-600",
+    glowClass: "hover:shadow-amber-500/10 hover:border-amber-500/30",
+    accentColor: "text-amber-600 dark:text-amber-400"
   }
 ];
 
 const Projects = () => {
   return (
     <section className="w-full py-16" id="project">
-      <div className="flex flex-col items-center gap-16">
+      <div className="flex flex-col items-center gap-16 overflow-hidden max-w-7xl mx-auto px-4 sm:px-6">
+        
+        {/* Header */}
         <div className="flex flex-col items-center gap-4 text-center max-w-2xl">
-          <div className="inline-flex items-center justify-center rounded-full bg-primary-500/10 text-primary-500 dark:text-primary-400 border border-primary-500/20 px-6 py-2 backdrop-blur-md">
-            <span className="text-sm font-semibold tracking-wider uppercase">Projects</span>
-          </div>
-          <h2 className="text-3xl md:text-5xl font-bold font-heading text-text">
-            Some of my noteworthy projects
-          </h2>
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="inline-flex items-center justify-center rounded-full bg-cyan-500/10 text-cyan-600 dark:text-cyan-400 border border-cyan-500/20 px-6 py-2 backdrop-blur-md"
+          >
+            <span className="text-sm font-semibold tracking-wider uppercase">Portfolio</span>
+          </motion.div>
+          
+          <motion.h2 
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="text-3xl md:text-5xl font-bold font-heading text-text"
+          >
+            Noteworthy Engineering Deployments
+          </motion.h2>
+          
+          <motion.p 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="text-base md:text-lg text-text-muted mt-2"
+          >
+            A selective index of production-ready full stack systems I’ve architected, coded, and deployed.
+          </motion.p>
         </div>
 
-        <div className="grid grid-cols-1 gap-12 lg:gap-24 w-full">
-          {projects.map((project, index) => (
-            <div 
-              key={index}
-              className={`flex flex-col lg:flex-row gap-8 lg:gap-16 items-center ${index % 2 !== 0 ? 'lg:flex-row-reverse' : ''}`}
-            >
-              <div className="w-full lg:w-1/2 relative group">
-                <div className="absolute inset-0 bg-gradient-to-tr from-primary-500 to-purple-500 rounded-3xl rotate-2 opacity-30 blur-xl group-hover:rotate-4 group-hover:opacity-50 transition-all duration-500"></div>
-                <a href={project.link} target="_blank" rel="noreferrer" className="relative block overflow-hidden rounded-3xl border border-white/10 shadow-2xl">
-                  <img
-                    src={project.image}
-                    alt={project.title}
-                    className="w-full h-auto object-cover transform transition-transform duration-700 group-hover:scale-105"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                </a>
-              </div>
-
-              <div className="w-full lg:w-1/2 flex flex-col gap-6">
-                <h3 className="text-2xl md:text-3xl font-bold font-heading text-text">
-                  {project.title}
-                </h3>
-                <p className="text-text-muted text-base md:text-lg leading-relaxed">
-                  {project.description}
-                </p>
-                
-                <div className="flex flex-wrap gap-2 mt-2">
-                  {project.tech.map((tech, i) => (
-                    <span 
-                      key={i}
-                      className="px-4 py-1.5 rounded-full text-sm font-medium bg-surface-hover text-text border border-white/5 shadow-sm"
-                    >
-                      {tech}
-                    </span>
-                  ))}
+        {/* Asymmetrical Bento Columns for Projects */}
+        <div className="w-full flex flex-col gap-16">
+          {projects.map((project, index) => {
+            const isOdd = index % 2 !== 0;
+            return (
+              <motion.div 
+                key={index}
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-100px" }}
+                transition={{ duration: 0.8 }}
+                className={`flex flex-col lg:flex-row gap-10 lg:gap-16 items-stretch w-full ${
+                  isOdd ? 'lg:flex-row-reverse' : ''
+                }`}
+              >
+                {/* Visual Image container with glow frame */}
+                <div className="w-full lg:w-1/2 relative group rounded-3xl overflow-hidden p-3 bg-slate-100 dark:bg-[#0b0f19] border border-black/5 dark:border-white/5 shadow-2xl flex items-center justify-center">
+                  <div className={`absolute inset-0 bg-gradient-to-tr ${project.accentClass} opacity-10 group-hover:opacity-25 blur-lg transition-opacity duration-500 pointer-events-none`}></div>
+                  <div className="w-full h-full rounded-2xl overflow-hidden relative border border-black/5 dark:border-white/5">
+                    <img
+                      src={project.image}
+                      alt={project.title}
+                      className="w-full h-64 sm:h-80 md:h-[360px] object-cover transform transition-transform duration-700 group-hover:scale-105"
+                    />
+                    <div className="absolute inset-0 bg-slate-950/20 group-hover:bg-transparent transition-colors duration-300"></div>
+                  </div>
                 </div>
 
-                <div className="pt-4">
-                  <a
-                    href={project.link}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-primary-600 hover:bg-primary-500 text-white font-medium transition-colors shadow-lg shadow-primary-500/30"
-                  >
-                    View Project
-                    <FiExternalLink size={18} />
-                  </a>
+                {/* Content Details */}
+                <div className="w-full lg:w-1/2 flex flex-col justify-between py-2">
+                  <div className="flex flex-col gap-6">
+                    {/* Project Categories */}
+                    <div className="flex flex-col gap-2">
+                      <span className={`text-xs font-mono font-bold uppercase tracking-widest ${project.accentColor}`}>
+                        {project.tagline}
+                      </span>
+                      <h3 className="text-3xl font-extrabold font-heading text-text group-hover:text-cyan-500 dark:group-hover:text-cyan-400 transition-colors">
+                        {project.title}
+                      </h3>
+                    </div>
+
+                    <p className="text-text-muted text-base md:text-lg leading-relaxed">
+                      {project.description}
+                    </p>
+
+                    {/* Key Technical Highlights */}
+                    <div className="flex flex-col gap-3 mt-2 border-l-2 border-black/10 dark:border-white/10 pl-4 py-1">
+                      {project.metrics.map((metric, i) => (
+                        <div key={i} className="flex items-start gap-2.5 text-sm md:text-base text-text-muted">
+                          <span>{metric}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  <div className="mt-8 flex flex-col gap-6">
+                    {/* Tech tag chips */}
+                    <div className="flex flex-wrap gap-2">
+                      {project.tech.map((tech, i) => (
+                        <span 
+                          key={i}
+                          className="px-3.5 py-1.5 rounded-xl text-xs font-mono font-bold bg-slate-100 dark:bg-[#0b0f19] border border-black/5 dark:border-white/5 text-text-muted hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors"
+                        >
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
+
+                    {/* Action buttons */}
+                    <div className="border-t border-black/5 dark:border-white/5 pt-4">
+                      <a
+                        href={project.link}
+                        target="_blank"
+                        rel="noreferrer"
+                        className={`inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r ${project.accentClass} text-white font-bold text-sm transition-all duration-300 transform hover:scale-[1.03] shadow-lg`}
+                      >
+                        Launch Application
+                        <FiExternalLink size={16} />
+                      </a>
+                    </div>
+                  </div>
                 </div>
-              </div>
-            </div>
-          ))}
+              </motion.div>
+            );
+          })}
         </div>
       </div>
     </section>

@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion';
 import clawLaw from "../Assets/gptclaw.PNG";
 import rablo from "../Assets/rablo.png";
 import dezhub from "../Assets/dezhub.png";
@@ -7,6 +8,7 @@ const experiences = [
     company: "Claw Legal Tech",
     logo: clawLaw,
     period: "May 2024 - Present",
+    current: true,
     roles: [
       {
         title: "Full Stack Lead",
@@ -32,6 +34,7 @@ const experiences = [
     company: "Rablo",
     logo: rablo,
     period: "Feb 2024 - April 2024",
+    current: false,
     roles: [
       {
         title: "Backend Developer",
@@ -49,6 +52,7 @@ const experiences = [
     company: "Dezhub",
     logo: dezhub,
     period: "Nov 2023 - Jan 2024",
+    current: false,
     roles: [
       {
         title: "Backend Developer",
@@ -67,75 +71,115 @@ const experiences = [
 const Experience = () => {
   return (
     <section className="w-full py-16" id="work">
-      <div className="flex flex-col items-center gap-10 md:gap-16 px-4 sm:px-6">
+      <div className="flex flex-col items-center gap-16 px-4 sm:px-6 overflow-hidden max-w-5xl mx-auto">
+        
+        {/* Header */}
         <div className="flex flex-col items-center gap-4 text-center max-w-2xl">
-          <div className="inline-flex items-center justify-center rounded-full bg-primary-500/10 text-primary-500 dark:text-primary-400 border border-primary-500/20 px-6 py-2 backdrop-blur-md">
-            <span className="text-sm font-semibold tracking-wider uppercase">Experience</span>
-          </div>
-          <h2 className="text-3xl md:text-5xl font-bold font-heading text-text">
-            My Professional Journey
-          </h2>
-          <p className="text-base md:text-lg text-text-muted mt-2">
-            Here is a quick summary of my most recent experiences:
-          </p>
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="inline-flex items-center justify-center rounded-full bg-cyan-500/10 text-cyan-600 dark:text-cyan-400 border border-cyan-500/20 px-6 py-2 backdrop-blur-md"
+          >
+            <span className="text-sm font-semibold tracking-wider uppercase">History</span>
+          </motion.div>
+          
+          <motion.h2 
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="text-3xl md:text-5xl font-bold font-heading text-text"
+          >
+            Professional Engagements
+          </motion.h2>
+          
+          <motion.p 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="text-base md:text-lg text-text-muted mt-2"
+          >
+            Engineering scalable platforms, leading development, and collaborating inside fast-growing ecosystems.
+          </motion.p>
         </div>
 
-        <div className="w-full max-w-4xl flex flex-col gap-6 md:gap-12">
+        {/* Dynamic Timeline Layout */}
+        <div className="w-full flex flex-col gap-10 relative">
+          
+          {/* Vertical left accent glow track */}
+          <div className="absolute left-6 top-4 bottom-4 w-[2px] bg-gradient-to-b from-cyan-500 via-indigo-500 to-purple-500/10 hidden md:block"></div>
+
           {experiences.map((exp, index) => (
-            <div key={index} className="glass-card p-6 sm:p-8 md:p-10 flex flex-col md:flex-row gap-6 md:gap-8 relative overflow-hidden group">
-              <div className="absolute top-0 left-0 w-1.5 md:w-2 h-full bg-gradient-to-b from-primary-500 to-purple-500"></div>
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.6, delay: index * 0.1 }}
+              className="relative flex flex-col md:flex-row gap-6 md:gap-12 w-full md:pl-16"
+            >
+              {/* Central Glowing status node dot */}
+              <div className="absolute left-6 w-5 h-5 rounded-full bg-[#080a10] border-4 border-cyan-500 shadow-[0_0_12px_rgba(6,182,212,0.6)] top-[26px] transform -translate-x-1/2 hidden md:block z-10"></div>
               
-              <div className="md:w-1/4 flex flex-row md:flex-col items-center md:items-stretch justify-between md:justify-start gap-4">
-                <div className="h-14 w-28 sm:h-16 sm:w-32 md:h-20 md:w-full flex items-center justify-center p-2 sm:p-3 md:p-4 rounded-xl bg-gray-100 dark:bg-white/5 border border-gray-200 dark:border-white/10 group-hover:scale-105 transition-transform duration-300">
+              {/* Left Side: Brand Panel */}
+              <div className="w-full md:w-1/4 flex flex-col md:items-start gap-3">
+                <div className="h-14 w-28 md:w-36 flex items-center justify-center p-3 rounded-xl bg-slate-100 dark:bg-[#0b0f19] border border-black/5 dark:border-white/5 shadow-md">
                   <img
                     alt={`${exp.company} logo`}
                     loading="lazy"
-                    className="max-h-full max-w-full object-contain filter drop-shadow-md"
+                    className="max-h-full max-w-full object-contain filter brightness-110"
                     src={exp.logo}
                   />
                 </div>
-                <p className="text-xs sm:text-sm font-semibold text-text-muted text-right md:hidden">
-                  {exp.period}
-                </p>
+
+                <div className="flex flex-col gap-1 mt-1">
+                  <h3 className="text-lg font-black font-heading text-text tracking-wide">{exp.company}</h3>
+                  <span className="text-xs font-mono font-semibold text-text-muted">{exp.period}</span>
+                </div>
+
+                {exp.current && (
+                  <span className="inline-flex items-center gap-1.5 self-start px-2.5 py-0.5 rounded-full text-[10px] font-mono font-bold uppercase tracking-wider bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/20 shadow-sm shadow-emerald-500/5 mt-1">
+                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
+                    Current Role
+                  </span>
+                )}
               </div>
 
-              <div className="md:w-2/4 flex flex-col gap-6 md:gap-8">
+              {/* Right Side: Details list */}
+              <div className="w-full md:w-3/4 flex flex-col gap-8 glass-card p-6 md:p-8 hover:border-cyan-500/20 transition-all duration-300 hover:shadow-xl hover:shadow-cyan-500/5 relative overflow-hidden group">
+                <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-cyan-500/5 to-transparent pointer-events-none rounded-bl-full"></div>
+
                 {exp.roles.map((role, rIndex) => (
-                  <div key={rIndex} className="relative">
-                    {exp.roles.length > 1 && (
-                      <div className="absolute -left-4 sm:-left-[1.65rem] top-2 bottom-[-1.5rem] w-px bg-gray-300 dark:bg-white/10 hidden sm:block"></div>
-                    )}
-                    <div className="relative">
-                      {exp.roles.length > 1 && (
-                        <div className="absolute -left-[1.3rem] sm:-left-[2rem] top-2 w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-primary-500 shadow-[0_0_10px_rgba(var(--primary-500),0.5)] hidden sm:block"></div>
-                      )}
-                      <h3 className="text-lg md:text-xl font-bold text-text mb-1">
+                  <div key={rIndex} className="flex flex-col gap-4 relative">
+                    {/* Role Header */}
+                    <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between border-b border-black/5 dark:border-white/5 pb-3">
+                      <h4 className="text-xl font-bold text-text group-hover:text-cyan-600 dark:group-hover:text-cyan-400 transition-colors">
                         {role.title}
-                      </h3>
-                      <time className="block text-xs sm:text-sm font-medium text-primary-500 mb-3 md:hidden">
+                      </h4>
+                      <span className="text-xs font-mono font-bold text-indigo-600 dark:text-indigo-400 mt-1 sm:mt-0 uppercase tracking-widest bg-indigo-500/10 dark:bg-indigo-500/20 px-2.5 py-1 rounded-md self-start border border-indigo-500/15">
                         {role.duration}
-                      </time>
-                      <ul className="flex flex-col gap-2 mt-3 md:mt-0">
-                        {role.responsibilities.map((resp, i) => (
-                          <li key={i} className="text-sm md:text-base text-text-muted flex items-start gap-2.5">
-                            <span className="text-primary-500 mt-0.5 md:mt-1 text-lg">•</span>
-                            <span className="leading-relaxed">{resp}</span>
-                          </li>
-                        ))}
-                      </ul>
+                      </span>
                     </div>
+
+                    {/* Bullet Achievements */}
+                    <ul className="flex flex-col gap-3">
+                      {role.responsibilities.map((resp, i) => (
+                        <li key={i} className="text-sm md:text-base text-text-muted flex items-start gap-3 leading-relaxed">
+                          {/* Cyan hexagon dot */}
+                          <span className="text-cyan-600 dark:text-cyan-400 mt-1 select-none flex-shrink-0">◆</span>
+                          <span>{resp}</span>
+                        </li>
+                      ))}
+                    </ul>
                   </div>
                 ))}
               </div>
-
-              <div className="md:w-1/4 hidden md:flex justify-end">
-                <p className="text-sm font-medium text-text-muted mt-1 whitespace-nowrap">
-                  {exp.period}
-                </p>
-              </div>
-            </div>
+            </motion.div>
           ))}
         </div>
+        
       </div>
     </section>
   );

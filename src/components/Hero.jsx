@@ -1,74 +1,137 @@
 import { FaGithub, FaTwitter, FaLinkedin } from 'react-icons/fa';
+import { motion } from 'framer-motion';
 
 const Hero = () => {
   return (
-    <section className="w-full flex items-center justify-center pt-24 pb-12" id="hero">
-      <div className="flex flex-col-reverse md:flex-row items-center gap-12 w-full glass-card p-8 md:p-12 animate-slide-up">
+    <section className="w-full flex items-center justify-center pt-24 pb-12 overflow-hidden" id="hero">
+      <div className="flex flex-col-reverse lg:flex-row items-center gap-16 w-full py-8">
         
-        {/* Text Content */}
-        <div className="flex-1 flex flex-col gap-8 md:pr-8">
+        {/* Left Side: Text and Terminal */}
+        <motion.div 
+          initial={{ opacity: 0, x: -50 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          className="flex-1 flex flex-col gap-8 md:pr-4"
+        >
+          {/* Status Badge */}
+          <div className="inline-flex items-center gap-2 self-start rounded-full bg-cyan-500/10 text-cyan-600 dark:text-cyan-400 border border-cyan-500/20 px-4 py-1.5 backdrop-blur-md">
+            <span className="relative flex h-2 w-2">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-cyan-500"></span>
+            </span>
+            <span className="text-xs font-mono font-bold tracking-wider uppercase">⚡ Full-Stack Developer</span>
+          </div>
+
+          {/* Heading */}
           <div className="flex flex-col gap-4">
-            <h1 className="text-4xl md:text-6xl font-bold font-heading text-text tracking-tight">
-              Hi, I'm Shubham
-              <span className="inline-block animate-waving-hand ml-4">👋</span>
+            <h1 className="text-5xl md:text-7xl font-extrabold font-heading tracking-tight text-text leading-none">
+              Shubham <br />
+              <span className="text-gradient-cyan">Prajapati</span>
             </h1>
-            <h2 className="text-2xl md:text-3xl font-semibold text-gradient">
-              Full Stack Developer
+            
+            <h2 className="text-lg md:text-xl font-mono text-text-muted mt-2">
+              {"// CRAFTING HIGH-PERFORMANCE DIGITAL ECOSYSTEMS"}
             </h2>
-            <p className="text-text-muted text-base md:text-lg leading-relaxed max-w-2xl">
-              I specialize in React.js and Node.js, focusing on creating exceptional digital 
-              experiences that are fast, accessible, visually appealing, and responsive. 
-              I craft solutions that don't just work, but feel amazing to use.
+            
+            <p className="text-text-muted text-base md:text-lg leading-relaxed max-w-xl mt-4">
+              I construct fast, visually stunning, and highly responsive web and mobile solutions using React, Node.js, and Go. Specializing in end-to-end full-stack architectures.
             </p>
           </div>
 
-          <div className="flex flex-col gap-4">
-            <div className="flex items-center gap-3 text-text-muted font-medium">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path>
-                <circle cx="12" cy="10" r="3"></circle>
-              </svg>
-              Bareilly, India
+          {/* CTA & Social Actions */}
+          <div className="flex flex-wrap items-center gap-6 mt-2">
+            <a
+              href="#project"
+              className="inline-flex items-center justify-center px-8 py-4 rounded-xl bg-gradient-to-r from-cyan-500 to-indigo-600 hover:from-cyan-400 hover:to-indigo-500 text-white font-bold transition-all duration-300 transform hover:scale-[1.03] shadow-lg shadow-cyan-500/20"
+            >
+              Explore Projects
+            </a>
+            
+            <a
+              href="#contact"
+              className="inline-flex items-center justify-center px-8 py-4 rounded-xl glass border-black/5 dark:border-white/5 text-text hover:bg-surface-hover font-semibold transition-all duration-300"
+            >
+              Let's Connect
+            </a>
+
+            <div className="flex items-center gap-3 ml-2">
+              {[
+                { icon: FaGithub, href: "https://github.com/ShubhamP528", color: "hover:text-cyan-600 dark:hover:text-cyan-400" },
+                { icon: FaTwitter, href: "https://twitter.com/shubham14481056", color: "hover:text-blue-500 dark:hover:text-blue-400" },
+                { icon: FaLinkedin, href: "https://www.linkedin.com/in/shubham-prajapati-a3b635228", color: "hover:text-indigo-600 dark:hover:text-indigo-400" }
+              ].map((social, index) => (
+                <a
+                  key={index}
+                  href={social.href}
+                  target="_blank"
+                  rel="noreferrer"
+                  className={`p-3 glass rounded-xl text-text-muted transition-all duration-300 hover:-translate-y-1 hover:bg-surface-hover ${social.color}`}
+                >
+                  <social.icon size={20} />
+                </a>
+              ))}
+            </div>
+          </div>
+        </motion.div>
+
+        {/* Right Side: Glowing Monospace Terminal Card & Image Frame */}
+        <motion.div 
+          initial={{ opacity: 0, x: 50 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+          className="w-full lg:w-[45%] flex flex-col items-center justify-center gap-8"
+        >
+          {/* Holographic Developer Card */}
+          <div className="w-full max-w-md bg-[#0b0f19] border border-black/5 dark:border-white/5 rounded-2xl shadow-2xl overflow-hidden glow-shadow-cyan">
+            {/* Terminal Top Bar */}
+            <div className="flex items-center justify-between px-4 py-3 bg-[#070a12] border-b border-black/5 dark:border-white/5">
+              <div className="flex items-center gap-2">
+                <span className="w-3 h-3 rounded-full bg-red-500/80"></span>
+                <span className="w-3 h-3 rounded-full bg-yellow-500/80"></span>
+                <span className="w-3 h-3 rounded-full bg-green-500/80"></span>
+              </div>
+              <span className="text-xs font-mono text-text-muted">shubham@dev: ~</span>
+              <div className="w-6"></div>
             </div>
             
-            <div className="flex items-center gap-3 font-medium">
-              <div className="relative flex h-3 w-3">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-3 w-3 bg-green-500"></span>
+            {/* Terminal Body */}
+            <div className="p-6 font-mono text-xs md:text-sm text-cyan-400/90 leading-relaxed bg-[#0b0f19]/80 backdrop-blur-md">
+              <p className="text-text-muted"># Initialize full-stack developer portfolio</p>
+              <p className="text-purple-400">$ <span className="text-emerald-400">node</span> profile.js</p>
+              
+              <div className="mt-3 text-cyan-300">
+                <p>{"{"}</p>
+                <p className="pl-4"><span className="text-amber-400">"name"</span>: <span className="text-emerald-300">"Shubham Prajapati"</span>,</p>
+                <p className="pl-4"><span className="text-amber-400">"role"</span>: <span className="text-emerald-300">"Full Stack Tech Lead"</span>,</p>
+                <p className="pl-4"><span className="text-amber-400">"location"</span>: <span className="text-emerald-300">"Bareilly, India"</span>,</p>
+                <p className="pl-4"><span className="text-amber-400">"stack"</span>: [</p>
+                <p className="pl-8"><span className="text-emerald-300">"React"</span>, <span className="text-emerald-300">"Node.js"</span>,</p>
+                <p className="pl-8"><span className="text-emerald-300">"Golang"</span>, <span className="text-emerald-300">"React Native"</span></p>
+                <p className="pl-4">],</p>
+                <p className="pl-4"><span className="text-amber-400">"status"</span>: <span className="text-purple-300">"BUILDING_AWESOME_PRODUCTS"</span></p>
+                <p>{"}"}</p>
               </div>
-              <span className="text-green-600 dark:text-green-400">Available for new projects</span>
+
+              <div className="mt-4 border-t border-black/5 dark:border-white/5 pt-4 text-emerald-400 flex items-center gap-2">
+                <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                <span>Ready to collaborate</span>
+              </div>
             </div>
           </div>
 
-          <div className="flex gap-4 pt-2">
-            {[
-              { icon: FaGithub, href: "https://github.com/ShubhamP528" },
-              { icon: FaTwitter, href: "https://twitter.com/shubham14481056" },
-              { icon: FaLinkedin, href: "https://www.linkedin.com/in/shubham-prajapati-a3b635228" }
-            ].map((social, index) => (
-              <a
-                key={index}
-                href={social.href}
-                target="_blank"
-                rel="noreferrer"
-                className="p-3 glass rounded-xl hover:-translate-y-1 hover:shadow-primary-500/20 text-text hover:text-primary-500 transition-all duration-300"
-              >
-                <social.icon size={24} />
-              </a>
-            ))}
+          {/* Profile Photo Frame Overlay */}
+          <div className="relative group mt-2">
+            <div className="absolute inset-0 bg-gradient-to-tr from-cyan-500 to-indigo-500 rounded-3xl rotate-3 opacity-30 blur-xl group-hover:rotate-6 group-hover:opacity-50 transition-all duration-500"></div>
+            <div className="absolute inset-0 bg-gradient-to-tr from-cyan-500 to-indigo-500 rounded-3xl -rotate-3 transition-transform group-hover:-rotate-6 duration-500 border border-black/5 dark:border-white/10"></div>
+            <div className="relative w-48 h-56 md:w-56 md:h-64 rounded-3xl overflow-hidden border-4 border-black/5 dark:border-white/5 shadow-2xl z-10">
+              <img
+                src="https://res.cloudinary.com/dgsjppp4a/image/upload/c_crop,g_auto,h_800,w_826/xzyxaah7rqp10qzybskl.jpg"
+                alt="Shubham Prajapati"
+                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+              />
+            </div>
           </div>
-        </div>
-
-        {/* Image Content */}
-        <div className="w-[280px] h-[320px] md:w-[350px] md:h-[400px] relative animate-float">
-          <div className="absolute inset-0 bg-gradient-to-tr from-primary-500 to-purple-500 rounded-2xl rotate-6 opacity-50 blur-lg"></div>
-          <div className="absolute inset-0 bg-gradient-to-tr from-primary-500 to-purple-500 rounded-2xl rotate-3 transition-transform hover:rotate-6 duration-300"></div>
-          <img
-            src="https://res.cloudinary.com/dgsjppp4a/image/upload/c_crop,g_auto,h_800,w_826/xzyxaah7rqp10qzybskl.jpg"
-            alt="Shubham Prajapati"
-            className="absolute inset-0 w-full h-full object-cover rounded-2xl border-4 border-white/20 shadow-2xl z-10"
-          />
-        </div>
+        </motion.div>
         
       </div>
     </section>
