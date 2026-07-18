@@ -1,0 +1,78 @@
+name: Deploy Shubham Portfolio to GCP VM
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      # ------------ Checkout Code ------------
+      - uses: actions/checkout@v3
+
+      # ------------ Node Setup ------------
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      # ------------ Authenticate with GCP ------------
+      - name: Authenticate to Google Cloud
+        uses: google-github-actions/auth@v1
+        with:
+          credentials_json: ${{ secrets.GCP_secret_key }}
+
+      - name: Set up Google Cloud SDK
+        uses: google-github-actions/setup-gcloud@v1
+        with:
+          project_id: movie-sync-application
+
+      # ------------ Zip Node API ------------
+      - name: Zip Node.js API folder
+        run: zip -r shubham-portfolio.zip . -x "*.git*"  -x ".github/*"  -x ".gitignore" -x "gha-creds-*.json"
+
+      # ------------ Upload to GCS ------------
+      - name: Upload to GCP Cloud Storage
+        run: gsutil cp shubham-portfolio.zip gs://shubham-github-action-storage/Projects/shubham-portfolio.zip
+
+      # ------------ Deploy to VM ------------
+      - name: Deploy to VM
+        run: |
+          echo "${{ secrets.GCP_VM_SSH_KEY }}" > GCP_VM_SSH_KEY.pem
+          chmod 400 GCP_VM_SSH_KEY.pem
+
+          mkdir -p ~/.ssh
+          chmod 700 ~/.ssh
+
+          ssh-keyscan -H ${{ secrets.GCP_VM_IP_ADDRESS }} >> ~/.ssh/known_hosts
+
+          # Copy ZIP to VM home path safely
+          scp -i GCP_VM_SSH_KEY.pem shubham-portfolio.zip ${{ secrets.GCP_VM_USERNAME }}@${{ secrets.GCP_VM_IP_ADDRESS }}:~/
+
+          # ---- Remote VM deployment ----
+          ssh -i GCP_VM_SSH_KEY.pem ${{ secrets.GCP_VM_USERNAME }}@${{ secrets.GCP_VM_IP_ADDRESS }} << 'EOF'
+            # Create subdirectories safely inside user context
+            mkdir -p ~/shubham/shubham-portfolio
+            
+            # Move zip package out of root transit path
+            mv ~/shubham-portfolio.zip ~/shubham/
+            cd ~/shubham/
+
+            # Unzip production contents
+            unzip -o shubham-portfolio.zip -d shubham-portfolio/ 
+            rm -f shubham-portfolio.zip
+
+            # Clean and rebuild native deployment dependencies
+            cd shubham-portfolio
+            rm -rf node_modules package-lock.json
+            npm install --production
+
+            # Restart systemd target service matching active configuration name
+            sudo systemctl daemon-reload
+            sudo systemctl restart shubham-portfolio.service
+          EOF
+
+          # Clean up SSH private key from runner context
+          rm -f GCP_VM_SSH_KEY.pem
